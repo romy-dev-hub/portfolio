@@ -1,0 +1,516 @@
+/* background color: #F8F8F8 */
+body{
+    background-color: #f8f8f8;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.background{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    padding: 0;
+}
+
+.background img{
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+    filter: brightness(50%); 
+    position: absolute;
+    z-index: -1;
+}
+
+.background .logo{
+    width: 50%;
+    height: 50%;
+}
+
+.background .logo img{
+    width: 30%;
+    height: 30%;
+    height: auto;
+    position: relative;
+    top: -30px;
+    left: 15px;
+    z-index: 10;
+    animation: logoAnimation 2s ease forwards;
+}
+
+@keyframes logoAnimation {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.background .nav-bar{
+    position: relative; 
+    top: 20px; 
+    right: 20px; 
+    width: 100%; 
+    z-index: 11; 
+    opacity: 0; /* Start hidden for animation */
+    animation: navBarAnimation 1s ease forwards; /* Navigation bar animation */
+    animation-delay: 0.5s; /* Delay for effect */
+}
+
+@keyframes navBarAnimation {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.background .nav-bar ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    list-style: none;
+    gap: 20px;
+    padding-right: 20px;
+    z-index: 11;
+    top: -330px;
+}
+
+.background .nav-bar ul li a{
+    color: white;
+    list-style: none;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.background .nav-bar ul li a:hover {
+    color: rgb(12, 208, 12); /* Change color on hover */
+}
+
+h1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #f8f8f8;
+    text-align: center;
+    position: relative;
+    top: -85px;
+    opacity: 0; /* Start hidden for animation */
+    animation: headingAnimation 1s ease forwards; /* Heading animation */
+    animation-delay: 1s; /* Delay for effect */
+}
+
+@keyframes headingAnimation {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+span{
+    font-style: italic;
+    padding-left: 10px;
+    color: rgb(12, 208, 12);
+    display: inline; /* Align 'ROMY' with the first line */
+    line-height: 1; /* Ensure consistent line height */
+}
+
+.subtitle {
+    opacity: 0; /* Start hidden for animation */
+    transform: translateY(20px); /* Start slightly below */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition for fade and slide */
+    z-index: 12;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    gap: 50px; /*changed from 50px*/
+    border: 2px solid rgba(13, 204, 13, 0.817);
+    border-radius: 10px;
+    margin: 50px; /*changed from 100px*/
+    flex-wrap: wrap; /*changed from nowrap*/
+    transition: transform 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 1s forwards, borderColorChange 5s infinite alternate;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* Fully visible */
+    }
+}
+
+@keyframes borderColorChange {
+    0% {
+        border-color: rgb(18, 202, 18); /* Green */
+    }
+    100% {
+        border-color: rgb(139, 69, 19); /* Brown */
+    }
+}
+
+.descriptive-img{
+    width: 100%; /*changed from 400px*/
+    max-width: 400px; /*added*/
+    height: auto; /*changed from 400px*/
+    border-radius: 12px;
+    object-fit: cover;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+.descriptive-box{
+    max-width: 600px;
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Start slightly below */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition for fade and slide */
+    position: relative; /*changed from absolute*/
+    overflow: hidden;
+}
+
+.description-box.show {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to original position */
+}
+
+h2{
+    font-size: 24px;
+    font-style: italic;
+    color: rgb(18, 202, 18); /* Initial color green */
+    animation: colorChange 5s infinite alternate; /* Animation for color change */
+}
+
+@keyframes colorChange {
+    0% {
+        color: rgb(18, 202, 18); /* Green */
+    }
+    100% {
+        color: rgb(139, 69, 19); /* Brown */
+    }
+}
+
+button{
+    padding: 10px 20px;
+    background-color: rgba(13, 204, 13, 0.817);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Button transition */
+    position: relative;
+    animation: buttonColorChange 5s infinite alternate;
+}
+
+@keyframes buttonColorChange {
+    0% {
+        background-color: rgb(18, 202, 18); /* Green */
+    }
+    100% {
+        background-color: rgb(139, 69, 19); /* Brown */
+    }
+}
+
+button a {
+    color: white; /* Text color */
+    text-decoration: none; /* Remove underline */
+    display: block; /* Make the anchor fill the button */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    line-height: 1; /* Align text vertically */
+    position: absolute;
+    overflow: hidden;
+    z-index: 15;
+}
+
+button:hover {
+    background-color: rgba(18, 202, 18, 1);
+    transform: scale(1.1); /* Scale effect on hover */
+}
+
+.animate {
+    animation: bounce 0.5s ease forwards; /* Bounce animation */
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.decoration {
+    width: 80px; /*changed from 10%*/
+    height: auto; /*changed from 10%*/
+    position: relative; /* Position the image absolutely .. changed from relative */
+    top: -40px; /* Adjust this value to position it vertically */
+    right: -570px; /* Adjust this value to position it horizontally */
+    width: 100px; /* Set a width for the image */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.d{
+    position: relative;
+}
+
+.box{
+    position: relative;
+    top: -70px; /*changed from -70px*/
+}
+#animateButton{
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .descriptive-img {
+        width: 100%; /* Full width on smaller screens */
+        max-width: none; /* Remove max-width */
+    }
+
+    .description-box {
+        width: 100%; /* Full width for description box */
+        margin-top: 50px; /* Add margin for spacing */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        text-align: center;
+        
+    }
+
+    .decoration {
+        width: 0; /* Smaller decoration image on mobile */
+    }
+
+    h2 {
+        font-size: 20px; /* Smaller font size on mobile */
+        text-align: center;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    button {
+        font-size: 14px; /* Smaller button text on mobile */
+    }
+}
+
+/*deepseek addition*/
+/* Add to existing CSS */
+
+/* Update skills section */
+
+.skills-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px 0;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.skill-item {
+    flex: 0 0 auto;
+    width: 150px;
+    scroll-snap-align: center;
+}
+
+/* Center section heading */
+.skills-container h2 {
+    text-align: center;
+}
+
+/* Optional: Hide scrollbar when not needed */
+.skills-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.skills-grid {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Scrollbar styling */
+.skills-grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.skills-grid::-webkit-scrollbar-track {
+    background: #f8f8f8;
+    border-radius: 4px;
+}
+
+.skills-grid::-webkit-scrollbar-thumb {
+    background: #12ca12;
+    border-radius: 4px;
+}
+
+.skill-item {
+    padding: 25px;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+}
+
+.language-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+/* Specific logo adjustments */
+.skill-item:nth-child(3) .language-logo { /* JavaScript logo */
+    width: 90px;
+    height: 90px;
+}
+
+.skill-item:nth-child(4) .language-logo { /* Lua logo */
+    width: 70px;
+    height: 70px;
+}
+
+.skill-item:nth-child(5) .language-logo { /* C logo */
+    width: 60px;
+    height: 60px;
+    padding: 5px;
+}
+
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .skills-grid {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+        gap: 20px;
+        padding: 20px 15px;
+        overflow-x: hidden; /* Disable horizontal scroll */
+    }
+
+    .skill-item {
+        width: 100%;
+        max-width: 300px;
+        min-width: unset;
+        padding: 20px;
+    }
+
+    .language-logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .skill-item:nth-child(3) .language-logo,
+    .skill-item:nth-child(4) .language-logo,
+    .skill-item:nth-child(5) .language-logo {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+
+
+/* Projects Section */
+#projects {
+    padding: 50px 20px;
+    background-color: #f8f8f8;
+}
+
+.projects-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projects-container h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    color: #333;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.3s ease;
+}
+
+.project-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-info h3 {
+    color: #12ca12;
+    margin-bottom: 10px;
+}
+
+.project-link {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #12ca12;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: #0fa80f;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .project-card {
+        margin: 0 10px;
+    }
+}
