@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 500);
     });
 
-    // deepseek addition
+    
     // Scroll animation for skills and projects
     const observerOptions = {
         threshold: 0.1,
