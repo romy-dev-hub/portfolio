@@ -3,128 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roumaissa's Portfolio</title>
+    <meta name="description" content="Portfolio of Romy, a front-end web developer and game creator.">
+    <title>Romy's Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
-<body>
-    <div class="background">
-        <img src="assets/background.gif" alt="Animated Background">
-        <div class="nav-bar">
-            <ul>
-                <li><a href="#home">home</a></li>
-                <li><a href="#about">me</a></li>
-                <li><a href="#projects">projects</a></li>
-                <li><a href="#podcast">podcast</a></li>
-                <li><a href="#contact">contact</a></li>
-            </ul>
+<body class="bg-gray-900 text-white font-poppins">
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center">
+        <div class="background">
+            <img src="assets/background.gif" alt="Background GIF">
         </div>
-        <h1 id="greeting">GREETINGS EVERYONE! I'M ROMY <span>aka xiao ro</span></h1>
-        <p class="subtitle">a front-end web developer & game creator</p>
-    </div>
+        <nav class="nav-bar fixed top-0 w-full z-20 bg-gray-800 bg-opacity-90">
+            <div class="container mx-auto px-4 flex justify-between items-center">
+                <i class="fas fa-bars hamburger text-2xl md:hidden cursor-pointer"></i>
+                <div class="nav-links">
+                    <ul class="flex justify-end space-x-6 p-4 md:flex md:items-center md:space-x-6 md:p-0">
+                        <li><a href="#home" class="hover:text-green-400 transition">Home</a></li>
+                        <li><a href="#about" class="hover:text-green-400 transition">About</a></li>
+                        <li><a href="#skills" class="hover:text-green-400 transition">Skills</a></li>
+                        <li><a href="#projects" class="hover:text-green-400 transition">Projects</a></li>
+                        <li><a href="#podcast" class="hover:text-green-400 transition">Podcast</a></li>
+                        <li><a href="#contact" class="hover:text-green-400 transition">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="text-center z-10">
+            <h1 id="greeting" class="text-5xl md:text-6xl font-bold mb-4">Greetings, I'm <span>Romy</span> aka Xiao Ro</h1>
+            <p class="subtitle text-xl md:text-2xl italic">A Front-End Web Developer & Game Creator</p>
+        </div>
+    </section>
 
-    <section id="about">
-        <div class="container">
-            <img class="descriptive-img" src="assets/about me.jpg" alt="About Me">
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-800">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
+            <img src="assets/about me.jpg" alt="Romy" class="des descriptive-img rounded-lg w-full md:w-1/3">
             <div class="description-box">
-                <h2>let me tell you about me:</h2>
-                <p>I'm a 2nd-year CS student at USTHB with a passion for web dev and game design. I specialize in front-end tech like HTML, CSS, and JavaScript, and I'm diving into Vue.js. I've built games in Java, Python, and C, including a spooky maze game and a cute ping pong adventure. I'm also the creator of the <em>Legacy Podcast</em> (coming soon), where I share stories that inspire. My soul lives in a cabin surrounded by waterfalls, and I'm on a mission to become a full-stack queen!</p>
-                <button><a href="Resume.pdf" download>download resume</a></button>
+                <h2 class="text-3xl font-bold text-green-400 mb-4">About Me</h2>
+                <p class="text-lg">
+                    I'm a 2nd-year CS student at USTHB with a passion for web development and game design. I specialize in front-end technologies like HTML, CSS, and JavaScript, and I'm exploring Vue.js. My projects include a spooky maze game in Java, an Assembly calculator, and a clean food website. I'm also the creator of the *Legacy Podcast* (coming soon), where I share inspiring stories. My goal is to become a full-stack queen, coding from a cabin surrounded by waterfalls!
+                </p>
+                <button class="mt-6 px-6 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg transition">
+                    <a href="Resume.pdf" download>Download Resume</a>
+                </button>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="skills-container">
-        <h2>Technical Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-item"><i class="fab fa-html5"></i> HTML5</div>
-            <div class="skill-item"><i class="fab fa-css3-alt"></i> CSS3</div>
-            <div class="skill-item"><i class="fab fa-js"></i> JavaScript</div>
-            <div class="skill-item"><i class="fab fa-vuejs"></i> Vue.js</div>
-            <div class="skill-item"><i class="fab fa-java"></i> Java</div>
-            <div class="skill-item"><i class="fab fa-python"></i> Python</div>
-            <div class="skill-item"><i class="fas fa-code"></i> C</div>
-            <div class="skill-item"><i class="fas fa-database"></i> Oracle SQL</div>
-            <div class="skill-item"><i class="fab fa-git-alt"></i> Git</div>
-        </div>
-    </section>
-
-    <section id="projects" class="projects-container">
-        <h2>My Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-image"><img src="assets/shadow-escape.png" alt="Shadow Escape"></div>
-                <div class="project-info">
-                    <h3>Shadow Escape</h3>
-                    <p>A spooky Java maze game with vibrant paths. Navigate and escape!</p>
-                    <p><strong>Tech:</strong> Java, Swing</p>
-                    <a href="https://github.com/romy-dev-hub/shadow-escape-game" class="project-link" target="_blank">View Project</a>
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Technical Skills</h2>
+            <div class="skills-grid grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="skill-item p-4 bg-gray-800 rounded-lg text-center hover:-translate-y-1 transition">
+                    <i class="fab fa-html5 text-3xl text-green-400"></i>
+                    <p>HTML5</p>
                 </div>
-            </div>
-            <div class="project-card">
-                <div class="project-image"><img src="assets/pixelspark.png" alt="Pixelspark"></div>
-                <div class="project-info">
-                    <h3>Pixelspark</h3>
-                    <p>A clean food website with a focus on UI/UX, built with HTML, CSS, and JavaScript.</p>
-                    <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
-                    <a href="https://github.com/romy-dev-hub/food-website" class="project-link" target="_blank">View Project</a>
+                <div class="skill-item p-4 bg-gray-800 rounded-lg text-center hover:-translate-y-1 transition">
+                    <i class="fab fa-css3-alt text-3xl text-green-400"></i>
+                    <p>CSS3</p>
                 </div>
-            </div>
-            <div class="project-card">
-                <div class="project-image"><img src="assets/kitty-ping-pong.png" alt="Kitty Ping Pong"></div>
-                <div class="project-info">
-                    <h3>Kitty Ping Pong</h3>
-                    <p>A fun Lua-based ping pong game with cute cat-themed paddles.</p>
-                    <p><strong>Tech:</strong> Lua, LÖVE</p>
-                    <a href="https://github.com/romy-dev-hub/kitty-ping-pong" class="project-link" target="_blank">View Project</a>
+                <div class="skill-item p-4 bg-gray-800 rounded-lg text-center hover:-translate-y-1 transition">
+                    <i class="fab fa-js text-3xl text-green-400"></i>
+                    <p>JavaScript</p>
                 </div>
-            </div>
-            <div class="project-card">
-                <div class="project-image"><img src="assets/snake-game.png" alt="Snake Game"></div>
-                <div class="project-info">
-                    <h3>Snake Game</h3>
-                    <p>A classic Python game with smooth gameplay and logic.</p>
-                    <p><strong>Tech:</strong> Python</p>
-                    <a href="https://github.com/romy-dev-hub/snake-game" class="project-link" target="_blank">View Project</a>
+                <div class="skill-item p-4 bg-gray-800 rounded-lg text-center hover:-translate-y-1 transition">
+                    <i class="fab fa-vuejs text-3xl text-green-400"></i>
+                    <p>Vue.js</p>
                 </div>
-            </div>
-            <div class="project-card">
-                <div class="project-image"><img src="assets/2048.png" alt="2048"></div>
-                <div class="project-info">
-                    <h3>2048</h3>
-                    <p>A low-level C implementation of the classic 2048 puzzle game.</p>
-                    <p><strong>Tech:</strong> C</p>
-                    <a href="https://github.com/romy-dev-hub/2048-" class="project-link" target="_blank">View Project</a>
+                <div class="skill-item p-4 bg-gray-800 rounded-lg text-center hover:-translate-y-1 transition">
+                    <i class="fab fa-java text-3xl text-green-400"></i>
+                    <p>Java</p>
                 </div>
-            </div>
-            <div class="project-card">
-                <div class="project-image"><img src="assets/library-system.png" alt="Library Management System"></div>
-                <div class="project-info">
-                    <h3>Library Management System</h3>
-                    <p>A JavaFX app with Oracle SQL for managing books, students, and loans.</p>
-                    <p><strong>Tech:</strong> JavaFX, Oracle SQL</p>
-                    <a href="https://github.com/romy-dev-hub" class="project-link" target="_blank">View Project</a>
+                <div class="skill-item p-4 bg-gray-800 rounded-lg text-center hover:-translate-y-1 transition">
+                    <i class="fab fa-python text-3xl text-green-400"></i>
+                    <p>Python</p>
+                </div>
+                <div class="skill-item p-4 bg-gray-800 rounded-lg text-center hover:-translate-y-1 transition">
+                    <i class="fas fa-code text-3xl text-green-400"></i>
+                    <p>C</p>
+                </div>
+                <div class="skill-item p-4 bg-gray-800 rounded-lg text-center hover:-translate-y-1 transition">
+                    <i class="fas fa-database text-3xl text-green-400"></i>
+                    <p>Oracle SQL</p>
+                </div>
+                <div class="skill-item p-4 bg-gray-800 rounded-lg text-center hover:-translate-y-1 transition">
+                    <i class="fab fa-git-alt text-3xl text-green-400"></i>
+                    <p>Git</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="podcast">
-        <h2>Legacy Podcast</h2>
-        <p>Coming soon! A podcast where I share stories that inspire and echo with meaning.</p>
-        <button><a href="#" class="project-link">Stay Tuned</a></button>
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">My Projects</h2>
+            <div class="projects-grid grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="project-card bg-gray-900 rounded-lg overflow-hidden shadow-lg opacity-0 transition">
+                    <img src="assets/shadow escape.png" alt="Shadow Escape" class="w-full h-48 object-cover">
+                    <div class="project-info p-4">
+                        <h3 class="text-xl font-bold text-green-400">Shadow Escape</h3>
+                        <p>A spooky Java maze game with vibrant paths. Navigate and escape!</p>
+                        <p><strong>Tech:</strong> Java, Swing</p>
+                        <a href="https://github.com/romy-dev-hub/shadow-escape" class="project-link inline-block px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card bg-gray-900 rounded-lg overflow-hidden shadow-lg opacity-0 transition">
+                    <img src="assets/food website.png" alt="Pixelspark" class="w-full h-48 object-cover">
+                    <div class="project-info p-4">
+                        <h3 class="text-xl font-bold text-green-400">Pixelspark</h3>
+                        <p>A clean food website with a focus on UI/UX.</p>
+                        <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+                        <a href="https://github.com/romy-dev-hub/pixelspark" class="project-link inline-block px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card bg-gray-900 rounded-lg overflow-hidden shadow-lg opacity-0 transition">
+                    <img src="assets/assembly calculator.png" alt="Calculator" class="w-full h-48 object-cover">
+                    <div class="project-info p-4">
+                        <h3 class="text-xl font-bold text-green-400">Calculator</h3>
+                        <p>A simple calculator supporting decimal, binary, and hexadecimal operations.</p>
+                        <p><strong>Tech:</strong> Assembly</p>
+                        <a href="https://github.com/romy-dev-hub/assembly-calculator" class="project-link inline-block px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card bg-gray-900 rounded-lg overflow-hidden shadow-lg opacity-0 transition">
+                    <img src="assets/catch my apples.png" alt="Catch My Apples" class="w-full h-48 object-cover">
+                    <div class="project-info p-4">
+                        <h3 class="text-xl font-bold text-green-400">Catch My Apples</h3>
+                        <p>A fun game where players catch falling apples with a basket.</p>
+                        <p><strong>Tech:</strong> Python</p>
+                        <a href="https://github.com/romy-dev-hub/catch-my-apples" class="project-link inline-block px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card bg-gray-900 rounded-lg overflow-hidden shadow-lg opacity-0 transition">
+                    <img src="assets/2048.jpg" alt="2048" class="w-full h-48 object-cover">
+                    <div class="project-info p-4">
+                        <h3 class="text-xl font-bold text-green-400">2048</h3>
+                        <p>A low-level C implementation of the classic 2048 puzzle game.</p>
+                        <p><strong>Tech:</strong> C</p>
+                        <a href="https://github.com/romy-dev-hub/2048" class="project-link inline-block px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card bg-gray-900 rounded-lg overflow-hidden shadow-lg opacity-0 transition">
+                    <img src="assets/lib db project.png" alt="Library Management System" class="w-full h-48 object-cover">
+                    <div class="project-info p-4">
+                        <h3 class="text-xl font-bold text-green-400">Library Management System</h3>
+                        <p>A Swing app with Oracle SQL for managing books, students, and loans.</p>
+                        <p><strong>Tech:</strong> Swing, Oracle SQL</p>
+                        <a href="https://github.com/romy-dev-hub/library-management" class="project-link inline-block px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <form id="contact-form">
-            <input type="text" placeholder="Name" required>
-            <input type="email" placeholder="Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
+    <!-- Podcast Section -->
+    <section id="podcast" class="py-16 bg-gray-900 text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-4">Legacy Podcast</h2>
+            <p class="max-w-2xl mx-auto text-lg">Coming soon! A podcast where I share stories that inspire and echo with meaning.</p>
+            <button class="mt-6 px-6 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg transition">
+                <a href="#podcast">Stay Tuned</a>
+            </button>
+        </div>
     </section>
 
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Contact Me</h2>
+            <form id="contact-form" class="max-w-lg mx-auto flex flex-col gap-4">
+                <input type="text" name="name" placeholder="Your Name" required class="p-3 border border-green-500 rounded-lg bg-gray-900 text-white">
+                <input type="email" name="email" placeholder="Your Email" required class="p-3 border border-green-500 rounded-lg bg-gray-900 text-white">
+                <textarea name="message" placeholder="Your Message" required class="p-3 border border-green-500 rounded-lg bg-gray-900 text-white"></textarea>
+                <button type="submit" class="px-6 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg transition">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="index.js"></script>
 </body>
 </html>

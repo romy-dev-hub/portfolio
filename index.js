@@ -1,44 +1,49 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const navBar = document.querySelector('.nav-bar');
-    const heading = document.getElementById('greeting');
-    const subtitle = document.querySelector('.subtitle');
-    const descriptionBox = document.querySelector('.description-box');
+    // Hamburger menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+    });
 
-    // Fade in navigation, heading, subtitle, and description
-    setTimeout(() => {
-        navBar.style.opacity = '1';
-        heading.style.opacity = '1';
-        subtitle.style.opacity = '1';
-        subtitle.style.transform = 'translateY(0)';
-        descriptionBox.classList.add('show');
-    }, 500);
-
-    // Smooth scrolling and hover effects for nav links
-    const navLinks = document.querySelectorAll('.nav-bar ul li a');
-    navLinks.forEach(link => {
+    // Smooth scrolling and close menu on link click
+    const navItems = document.querySelectorAll('.nav-links ul li a');
+    navItems.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const targetId = link.getAttribute('href').substring(1);
             document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
-        });
-        link.addEventListener('mouseover', () => {
-            link.style.transform = 'scale(1.1)';
-        });
-        link.addEventListener('mouseout', () => {
-            link.style.transform = 'scale(1)';
+            navLinks.classList.remove('open'); // Close menu on mobile
         });
     });
 
+    // Typing animation for subtitle
+    const subtitle = document.querySelector('.subtitle');
+    const text = subtitle.textContent;
+    subtitle.textContent = '';
+    let i = 0;
+    function type() {
+        if (i < text.length) {
+            subtitle.textContent += text.charAt(i);
+            i++;
+            setTimeout(type, 50);
+        }
+    }
+    setTimeout(type, 2000);
+
     // IntersectionObserver for project cards and skills
     const observerOptions = {
-        threshold: 0.1,
+        threshold: 0.2,
         rootMargin: '0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, index * 100); // Staggered animation
             }
         });
     }, observerOptions);
@@ -47,11 +52,17 @@ document.addEventListener("DOMContentLoaded", function() {
         observer.observe(item);
     });
 
-    // Contact form submission
+    // Contact form submission with Toastify
     const form = document.getElementById('contact-form');
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-        alert('Message sent! (This is a placeholder. Add backend logic later.)');
+        Toastify({
+            text: "Message sent! Thank you for reaching out",
+            duration: 3000,
+            gravity: "top",
+            position: "right",
+            backgroundColor: "#10b981",
+        }).showToast();
         form.reset();
     });
 });
