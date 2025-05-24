@@ -81,16 +81,35 @@
     transform: translateY(0);
 }
 
+
 /* Mobile Navigation */
 @media (max-width: 768px) {
+    .nav-bar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: #1f2937; /* Dark background for better contrast */
+    }
+
+    .hamburger {
+        display: block;
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 15px;
+        z-index: 1100; /* Ensure hamburger is above the menu */
+    }
+
     .nav-links {
         position: fixed;
         top: 0;
         right: -100%;
         height: 100vh;
-        width: 250px;
+        width: 80%; /* Slightly narrower for better UX */
         background-color: #1f2937;
-        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 1000;
+        overflow-y: auto; /* Allow scrolling if content overflows */
     }
 
     .nav-links.open {
@@ -100,16 +119,19 @@
     .nav-links ul {
         flex-direction: column;
         align-items: center;
-        padding: 40px 20px;
-        gap: 20px;
+        padding: 60px 20px; /* More padding for better spacing */
+        gap: 30px; /* Increased gap for clarity */
     }
 
     .nav-links ul li a {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
+        color: #fff;
+        transition: color 0.3s ease, transform 0.3s ease;
     }
 
-    .hamburger {
-        display: block;
+    .nav-links ul li a:hover {
+        color: #10b981; /* Highlight color on hover */
+        transform: scale(1.1);
     }
 }
 
