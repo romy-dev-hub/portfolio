@@ -91,13 +91,17 @@
 /* Mobile Navigation */
 @media (max-width: 768px) {
     .nav-bar {
-        position: fixed;
+       position: fixed;
         top: 0;
+        left: 0;
         width: 100%;
         z-index: 1000;
         background-color: #1f2937;
-        justify-content: flex-end;
+        display: flex;
+        justify-content: flex-end; /* Align hamburger to the right */
+        align-items: center;
         padding: 0 15px;
+        box-sizing: border-box;
     }
 
     .hamburger {
