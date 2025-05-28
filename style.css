@@ -24,6 +24,8 @@
 /* Navigation Styles */
 .nav-bar {
     transition: all 0.3s ease;
+    display: flex; /* Ensure nav-bar is a flex container for hamburger positioning */
+    align-items: center; /* Vertically center content */
 }
 
 
@@ -34,7 +36,7 @@
 
 .nav-links ul {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center; /* Center links by default for desktop */
     align-items: center;
 }
 
@@ -94,6 +96,8 @@
         width: 100%;
         z-index: 1000;
         background-color: #1f2937;
+        justify-content: flex-end;
+        padding: 0 15px;
     }
 
     .hamburger {
@@ -102,7 +106,6 @@
         cursor: pointer;
         padding: 15px;
         z-index: 1100;
-    
     }
 
     .nav-links {
@@ -147,14 +150,19 @@
         display: none;
     }
 
+    .nav-bar {
+        justify-content: center; /* Center the nav-links container */
+    }
+
     .nav-links {
         transform: translateX(0);
     }
 
     .nav-links ul {
         gap: 30px;
+        justify-content: center; /* Center links on desktop */
     }
-    
+
     .nav-links ul li a {
         font-size: 1.2rem;
         padding: 10px 15px;
