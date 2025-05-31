@@ -18,26 +18,28 @@
         <div class="background">
             <img src="assets/background.gif" alt="Background GIF">
         </div>
+        <!--dark overlay-->
+        <div class="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
         <nav class="nav-bar fixed top-0 w-full z-20 bg-gray-800 bg-opacity-90">
             <div class="container mx-auto px-4 flex justify-evenly items-center">
                 <div class="w-full flex justify-end md:hidden">
                    <i class="fas fa-bars hamburger text-2xl cursor-pointer"></i>
                 </div>
                 <div class="nav-links">
-                    <ul class="flex justify-end space-x-6 p-4 md:flex md:items-center md:space-x-6 md:p-0">
-                        <li><a href="#home" class="hover:text-green-400 transition">Home</a></li>
-                        <li><a href="#about" class="hover:text-green-400 transition">About</a></li>
-                        <li><a href="#skills" class="hover:text-green-400 transition">Skills</a></li>
-                        <li><a href="#projects" class="hover:text-green-400 transition">Projects</a></li>
-                        <li><a href="#podcast" class="hover:text-green-400 transition">Podcast</a></li>
-                        <li><a href="#contact" class="hover:text-green-400 transition">Contact</a></li>
+                    <ul class="flex justify-end items-center gap-8">
+                        <li><a href="#home" class="hover:text-green-400 text-4xl transition">Home</a></li>
+                        <li><a href="#about" class="hover:text-green-400 text-4xl transition">About</a></li>
+                        <li><a href="#skills" class="hover:text-green-400 text-4xl transition">Skills</a></li>
+                        <li><a href="#projects" class="hover:text-green-400 text-4xl transition">Projects</a></li>
+                        <li><a href="#podcast" class="hover:text-green-400 text-4xl transition">Podcast</a></li>
+                        <li><a href="#contact" class="hover:text-green-400 text-4xl transition">Contact</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
         <div class="text-center z-10">
-            <h1 id="greeting" class="text-5xl md:text-6xl font-bold mb-4">Greetings, I'm <span>Romy</span> aka Xiao Ro</h1>
-            <p class="subtitle text-xl md:text-2xl italic">A Front-End Web Developer & Game Creator</p>
+            <h1 id="greeting" class="text-5xl md:text-6xl font-bold mb-4">Greetings, I'm Romy aka <span class="text-green-400"> Xiao Ro</span></h1>
+            <p class="subtitle text-xl md:text-2xl italic">A Front-End Web Developer & Games Creator</p>
         </div>
     </section>
 
@@ -48,7 +50,9 @@
             <div class="description-box">
                 <h2 class="text-3xl font-bold text-green-400 mb-4">About Me</h2>
                 <p class="text-lg">
-                    I'm a 2nd-year CS student at USTHB with a passion for web development and game design. I specialize in front-end technologies like HTML, CSS, and JavaScript, and I'm exploring Vue.js. My projects include a spooky maze game in Java, an Assembly calculator, and a clean food website. I'm also the creator of the *Legacy Podcast* (coming soon), where I share inspiring stories. My goal is to become a full-stack queen, coding from a cabin surrounded by waterfalls!
+                    I’m a second-year Computer Science student at USTHB with a strong focus on web development and game design. I specialize in front-end development using HTML, CSS, JavaScript, and I’m currently advancing my skills in React. I’ve developed multiple projects including an interactive Java-based maze game, an Assembly calculator, and a modern, responsive food website. My approach combines clean UI/UX design, performance optimization, and responsive layouts that adapt across devices.
+                    <br><br>
+                    Beyond technical projects, I’m also the creator of Legacy Podcast (coming soon ^^) a platform dedicated to sharing stories that inspire growth and creativity. My goal is to grow into a full-stack developer capable of delivering complete, high-impact web solutions from concept to deployment.
                 </p>
                 <button class="mt-6 px-6 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg transition">
                     <a href="Resume.pdf" download>Download Resume</a>
@@ -62,41 +66,55 @@
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-8">Technical Skills</h2>
             <div class="skills-grid grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!--Html5-->
                 <div class="skill-item p-4 bg-gray-800 rounded-lg text-center hover:-translate-y-1 transition">
                     <i class="fab fa-html5 text-3xl text-green-400"></i>
                     <p>HTML5</p>
                 </div>
+                <!--Css3-->
                 <div class="skill-item p-4 bg-gray-800 rounded-lg text-center hover:-translate-y-1 transition">
                     <i class="fab fa-css3-alt text-3xl text-green-400"></i>
                     <p>CSS3</p>
                 </div>
+                <!--js-->
                 <div class="skill-item p-4 bg-gray-800 rounded-lg text-center hover:-translate-y-1 transition">
                     <i class="fab fa-js text-3xl text-green-400"></i>
                     <p>JavaScript</p>
                 </div>
-                <div class="skill-item p-4 bg-gray-800 rounded-lg text-center hover:-translate-y-1 transition">
-                    <i class="fab fa-vuejs text-3xl text-green-400"></i>
-                    <p>Vue.js</p>
-                </div>
+                <!--java-->
                 <div class="skill-item p-4 bg-gray-800 rounded-lg text-center hover:-translate-y-1 transition">
                     <i class="fab fa-java text-3xl text-green-400"></i>
                     <p>Java</p>
                 </div>
+                <!--python-->
                 <div class="skill-item p-4 bg-gray-800 rounded-lg text-center hover:-translate-y-1 transition">
                     <i class="fab fa-python text-3xl text-green-400"></i>
                     <p>Python</p>
                 </div>
+                <!--C-->
                 <div class="skill-item p-4 bg-gray-800 rounded-lg text-center hover:-translate-y-1 transition">
                     <i class="fas fa-code text-3xl text-green-400"></i>
                     <p>C</p>
                 </div>
+                <!--oracle sql-->
                 <div class="skill-item p-4 bg-gray-800 rounded-lg text-center hover:-translate-y-1 transition">
                     <i class="fas fa-database text-3xl text-green-400"></i>
                     <p>Oracle SQL</p>
                 </div>
+                <!--git-->
                 <div class="skill-item p-4 bg-gray-800 rounded-lg text-center hover:-translate-y-1 transition">
                     <i class="fab fa-git-alt text-3xl text-green-400"></i>
                     <p>Git</p>
+                </div>
+                <!-- Lua -->
+                <div class="skill-item p-4 bg-gray-800 rounded-lg text-center hover:-translate-y-1 transition">
+                    <i class="fas fa-code text-3xl text-green-400"></i>
+                    <p>Lua</p>
+                </div>
+                <!-- Tailwind CSS -->
+                <div class="skill-item p-4 bg-gray-800 rounded-lg text-center hover:-translate-y-1 transition">
+                    <i class="fas fa-wind text-3xl text-green-400"></i>
+                    <p>Tailwind CSS</p>
                 </div>
             </div>
         </div>
