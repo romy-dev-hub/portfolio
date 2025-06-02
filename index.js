@@ -64,40 +64,42 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // EmailJS form submission
-    const form = document.querySelector('form');
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Check if emailjs is loaded
+    if (typeof emailjs === 'undefined') {
+        console.error('EmailJS is not loaded');
+        Toastify({
+            text: "Email service not loaded. Please try again later.",
+            duration: 3000,
+            gravity: "top",
+            position: "right",
+            backgroundColor: "#ef4444",
+        }).showToast();
+        return;
+    }
 
-        // Initialize EmailJS with your User ID
-        emailjs.init("Gmail"); 
-
-        const formData = new FormData(form);
-        const data = {
-            from_name: formData.get('name'),
-            email: formData.get('email'),
-            message: formData.get('message')
-        };
-
-        emailjs.send("service_a6aye4m", "template_3ymoe94", data)
-            .then(() => {
-                Toastify({
-                    text: "Message sent! Thank you for reaching out",
-                    duration: 3000,
-                    gravity: "top",
-                    position: "right",
-                    backgroundColor: "#10b981",
-                }).showToast();
-                form.reset();
-            })
-            .catch(error => {
-                Toastify({
-                    text: "Oops! Something went wrong.",
-                    duration: 3000,
-                    gravity: "top",
-                    position: "right",
-                    backgroundColor: "#ef4444",
-                }).showToast();
-                console.error("EmailJS error:", error);
-            });
+    emailjs.sendForm('service_a6aye4m', 'template_3ymoe94', this)
+        .then(() => {
+            Toastify({
+                text: "Message sent! Thank you for reaching out",
+                duration: 3000,
+                gravity: "top",
+                position: "right",
+                backgroundColor: "#10b981",
+            }).showToast();
+            this.reset();
+        })
+        .catch(error => {
+            console.error('EmailJS Error:', error);
+            Toastify({
+                text: "Oops! Something went wrong.",
+                duration: 3000,
+                gravity: "top",
+                position: "right",
+                backgroundColor: "#ef4444",
+            }).showToast();
+        });
     });
 });
