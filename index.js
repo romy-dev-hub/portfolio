@@ -64,16 +64,39 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Contact form submission with Toastify
-    const form = document.getElementById('contact-form');
     form.addEventListener('submit', (e) => {
-        e.preventDefault();
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    fetch('contact.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        if (response.ok) {
+            Toastify({
+                text: "Message sent! Thank you for reaching out",
+                duration: 3000,
+                gravity: "top",
+                position: "right",
+                backgroundColor: "#10b981",
+            }).showToast();
+            form.reset();
+        } else {
+            throw new Error("Server error");
+        }
+    })
+    .catch(error => {
         Toastify({
-            text: "Message sent! Thank you for reaching out",
+            text: "Oops! Something went wrong.",
             duration: 3000,
             gravity: "top",
             position: "right",
-            backgroundColor: "#10b981",
+            backgroundColor: "#ef4444",
         }).showToast();
-        form.reset();
+        console.error(error);
     });
+});
+
 });
